@@ -1,9 +1,9 @@
+import { NgDatepickerModule } from 'ng2-datepicker';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookCreateComponent } from './book-create/book-create.component';
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 
 const routes: Routes = [
   {
@@ -22,7 +22,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), NgDatepickerModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

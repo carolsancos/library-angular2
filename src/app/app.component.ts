@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { DatepickerOptions } from 'ng2-datepicker';
+import * as enLocale from 'date-fns/locale/en';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'library-angular2';
+  date: Date;
+  options: DatepickerOptions = {
+    locale: enLocale
+  };
+  constructor() {
+    this.date = new Date();
+  }
 }

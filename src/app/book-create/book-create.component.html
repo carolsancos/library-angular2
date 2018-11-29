@@ -1,3 +1,58 @@
-<p>
-  book-create works!
-</p>
+
+  <div class='table-responsive'>
+      <div class="container book-create">
+      <h1>Agregar / Editar Libros</h1>
+      <div class="book-create">
+        <div class="row">
+            <div class='col-md-6'>
+                <div class="row">
+
+                        <label class="col-sm-2 col-form-label" for="titulo"><b>T&iacute;tulo &nbsp;&nbsp; </b></label>
+                        <div class="controls">
+                          <input type="text" name="titulo" value="">
+                        </div>
+
+                </div>
+                <div class="row">
+
+                        <label class="col-sm-2 col-form-label" for="fecha_edicion"><b>Edici&oacute;n </b></label>
+                        <div class="controls">
+                          <span class="datepicker">
+                              <input type="text" id="datepicker" value="">
+                              <i class="fa fa-calendar" id="calendar-icon" aria-hidden="true"></i>
+                          </span>
+                          <input type="hidden" id="dbdatepicker" name="fecha_edicion" value="">
+                        </div>
+
+                </div>
+
+            </div>
+            <div class='col-md-6'>
+                <div class="row">
+                    <label class="col-sm-4 col-form-label" for="check_autores"><b>Lista de Autores </b></label>
+                </div>
+                <div class="row">
+                  <table class='table table-hover table-bordered table-striped'>
+                    <tr *ngFor="let author of authorList">
+                      <td>
+                          <input type="checkbox" name="check_autores" > {{author.nombre}}
+                      </td>
+                    </tr>
+                  </table>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class='col-md-6 text-center'>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+            <div class='col-md-6 pull-left'>
+                <a href="#" id="cancel" name="cancel" class="btn btn-danger">Cancelar</a>
+            </div>
+        </div>
+
+    </div>
+
+  </div>
+</div>

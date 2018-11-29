@@ -1,10 +1,10 @@
 <div class="container">
     <h1>Listar Libros</h1>
-    <p>
+    <div>
         <a routerLink="book/create" class="nav-link" routerLinkActive="active">
           Create book
         </a>
-    </p>
+    </div>
 
     <form class="form-horizontal" action="" method="post">
       <div class="form-inline">
@@ -30,10 +30,12 @@
                 <label class="col-sm-3 col-form-label" for="fecha_edicion">Edici&oacute;n  </label>
                 <div class="controls">
                     <span class="datepicker">
-                        <input type="text" id="datepicker">
+                        <ng-datepicker [(ngModel)]="date" [options]="options"></ng-datepicker>
                         <i class="fa fa-calendar" id="calendar-icon" aria-hidden="true"></i>
                     </span>
+
                     <input type="hidden" id="dbdatepicker" name="fecha_edicion">
+
                 </div>
               </div>
               <div class='col-md-4'>
@@ -46,7 +48,7 @@
       </div>
     </form>
 
-</div>
+
 
 <div class="table-responsive book-list">
   <table class="table table-hover table-bordered table-striped">
@@ -58,11 +60,13 @@
       </tr>
     </thead>
     <tbody>
-        <tr>
-          <td>Anna Karenina</td>
-          <td>01/02/1958</td>
-          <td>Leon Tolstoi</td>
+        <tr *ngFor="let book of bookList">
+          <td>{{book.titulo}}</td>
+          <td>{{book.fecha_edicion}}</td>
+          <td>2</td>
         </tr>
     </tbody>
   </table>
+</div>
+
 </div>

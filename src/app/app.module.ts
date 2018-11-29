@@ -1,5 +1,7 @@
+import { from } from 'rxjs';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgDatepickerModule } from 'ng2-datepicker';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -19,7 +21,8 @@ import { BookListComponent } from './book-list/book-list.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
