@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DatepickerOptions } from 'ng2-datepicker';
 import * as enLocale from 'date-fns/locale/en';
+import 'hammerjs';
 
 @Component({
   selector: 'app-root',

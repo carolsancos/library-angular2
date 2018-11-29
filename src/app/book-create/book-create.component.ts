@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Book } from './../book';
 import { Author } from './../author';
+import { DatepickerOptions } from 'ng2-datepicker';
+import * as enLocale from 'date-fns/locale/en';
 
 @Component({
   selector: 'app-book-create',
@@ -19,6 +20,15 @@ export class BookCreateComponent implements OnInit {
     new Author(8, 'Enric Ros'),
     new Author(9, 'Raquel Crisóstomo')
   ];
+  date: Date;
+  options: DatepickerOptions = {
+    locale: enLocale,
+    minYear: 1970,
+    maxYear: 2030,
+    displayFormat: 'DD-MM-YYYY',
+    dayNamesFormat: 'dd',
+    firstCalendarDay: 0 // 0 - Sunday, 1 - Monday
+  };
 
   constructor() { }
 

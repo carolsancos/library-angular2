@@ -10,19 +10,30 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BookCreateComponent } from './book-create/book-create.component';
 import { BookListComponent } from './book-list/book-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatCheckboxModule, MatTableModule,
+  MatPaginatorModule, MatSortModule } from '@angular/material';
+import { TableAuthorComponent } from './table-author/table-author.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookCreateComponent,
-    BookListComponent
+    BookListComponent,
+    TableAuthorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgDatepickerModule
+    NgDatepickerModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]
