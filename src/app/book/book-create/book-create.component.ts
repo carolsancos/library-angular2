@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { DatepickerOptions } from 'ng2-datepicker';
 import * as enLocale from 'date-fns/locale/en';
 
-
 @Component({
   selector: 'app-book-create',
   templateUrl: './book-create.component.html',

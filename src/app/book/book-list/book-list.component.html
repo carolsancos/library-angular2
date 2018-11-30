@@ -9,13 +9,13 @@
             <div class='col-md-6'>
               <label class="col-sm-3 col-form-label" for="titulo">T&iacute;tulo &nbsp;&nbsp;</label>
               <div class="controls">
-                  <input type="text" id="titulo" name="titulo" />
+                  <input type="text" class="form-control" name="titulo" [(ngModel)]="tituloText" #titulo="ngModel" (input)="filterItem(titulo.value)" [ngModelOptions]="{standalone: true}" />
               </div>
             </div>
             <div class='col-md-6'>
                   <label class="col-sm-3 col-form-label" for="nro_autores">Autores &nbsp;</label>
                   <div class="controls">
-                      <input type="text" id="nro_autores" name="nro_autores" />
+                      <input type="text" class="form-control" #nro_autores name="nro_autores" />
                   </div>
             </div>
           </div>
@@ -24,19 +24,14 @@
                   <label class="col-sm-3 col-form-label" for="fecha_edicion">Edici&oacute;n  </label>
                   <div class="controls">
                       <span class="datepicker">
-                          <ng-datepicker [(ngModel)]="date" [options]="options"></ng-datepicker>
+                          <ng-datepicker #editiondate [(ngModel)]="date" [options]="options"></ng-datepicker>
                       </span>
-                      <input type="hidden" id="dbdatepicker" name="fecha_edicion">
+                      <input type="hidden" name="fecha_edicion" value="{{date}}" >
 
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <div class="controls">
-                    <button type="submit" class="btn btn-primary">
-                      <span class="glyphicon glyphicon-search"></span>
-                      Buscar
-                    </button>
-                  </div>
+
                 </div>
 
             </div>
@@ -61,13 +56,14 @@
       </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let book of bookList">
-          <td>{{book.titulo}}</td>
-          <td>{{book.fecha_edicion}}</td>
+        <tr *ngFor="let item of filteredItems">
+          <td>{{item.titulo}}</td>
+          <td>{{item.fecha_edicion}}</td>
           <td>2</td>
         </tr>
     </tbody>
   </table>
+
 </div>
 
 </div>

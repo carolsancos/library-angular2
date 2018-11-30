@@ -15,6 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule, MatTableModule,
   MatPaginatorModule, MatSortModule } from '@angular/material';
 import { TableAuthorComponent } from './table-author/table-author.component';
+import { BookService } from './book/book.service';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +38,7 @@ import { TableAuthorComponent } from './table-author/table-author.component';
     MatPaginatorModule,
     MatSortModule
   ],
-  providers: [],
+  providers: [BookService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -25,6 +25,8 @@ export class BookListComponent implements OnInit {
     dayNamesFormat: 'dd',
     firstCalendarDay: 0 // 0 - Sunday, 1 - Monday
   };
+  filteredItems = Object.assign([], this.bookList);
+  tituloText: string;
 
   constructor() {
     this.date = new Date();
@@ -32,5 +34,17 @@ export class BookListComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  assignCopy() {
+    this.filteredItems = Object.assign([], this.bookList);
+ }
+ filterItem(value) {
+    if (!value) {
+      this.assignCopy(); // when nothing was typed
+    }
+    this.filteredItems = Object.assign([], this.bookList).filter(
+       item => item.titulo.toLowerCase().indexOf(value.toLowerCase()) > -1
+    );
+ }
 
 }
