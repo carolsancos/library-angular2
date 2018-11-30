@@ -1,7 +1,8 @@
+import { Author } from './../../author/author';
 import { Component, OnInit } from '@angular/core';
-import { Author } from './../author';
 import { DatepickerOptions } from 'ng2-datepicker';
 import * as enLocale from 'date-fns/locale/en';
+
 
 @Component({
   selector: 'app-book-create',
